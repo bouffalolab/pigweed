@@ -153,7 +153,7 @@ StatusWithSize FloatAsIntToString(float value, std::span<char> buffer) {
   if (std::isfinite(value) &&
       std::abs(value) <
           static_cast<float>(std::numeric_limits<int64_t>::max())) {
-    return IntToString<int64_t>(std::round(value), buffer);
+    return IntToString<int64_t>(::round(value), buffer);
   }
 
   // Otherwise, print inf or NaN, if they fit.
